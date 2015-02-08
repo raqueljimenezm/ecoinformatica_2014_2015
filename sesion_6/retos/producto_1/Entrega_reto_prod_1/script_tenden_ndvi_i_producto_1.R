@@ -67,7 +67,7 @@ plotclr <- rev(brewer.pal(5, "Spectral"))
 ## Asociamos los valores de tau a su valor correspondiente
 colcode <- findColours(clases, plotclr)
 
-plot(cosa, col=colcode, pch=19, cex = .6, main = "Mapa de tendencias")
+plot(cosa, col=colcode, pch=19, cex = .6, main = "Mapa de tendencias para ndvi")
 ## mostramos la leyenda
 legend("topright", legend=names(attr(colcode, "table")),
        fill=attr(colcode, "palette"), bty="n")
@@ -77,7 +77,7 @@ legend("topright", legend=names(attr(colcode, "table")),
 cosa$significativa <- ifelse(cosa$pvalue < 0.05, 1, 2)
 ## plot sin tener en cuenta
 plot(cosa, col=colcode, pch=c(19, 20)[as.numeric(cosa$significativa)],
-     cex = .6, main = "Mapa de tendencias")
+     cex = .6, main = "Mapa de tendencias para ndvi")
 ## mostramos la leyenda
 legend("topright", legend=names(attr(colcode, "table")),
        fill=attr(colcode, "palette"), bty="n")
